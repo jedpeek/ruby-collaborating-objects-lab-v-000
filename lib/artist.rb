@@ -13,7 +13,7 @@ class Artist
 
   def self.all
     @@all
-    
+
   end
 
   def save
@@ -26,7 +26,7 @@ class Artist
         return artist
       else
         self.new(name).tap {|artist| artist.save}
-        @@all << artist
+        @@all << self
       end
     end
    end
