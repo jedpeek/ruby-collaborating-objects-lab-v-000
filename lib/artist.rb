@@ -17,10 +17,6 @@ class Artist
     @@all
   end
 
-  def save
-    @@all << self
-  end
-
   def self.find_or_create_by_name(name)
     @@all.each do |artist|
       if artist.name == name
@@ -30,6 +26,11 @@ class Artist
       end
     end
    end
+
+
+  def save
+   @@all << self
+  end
 
 
   def print_songs
