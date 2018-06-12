@@ -11,14 +11,10 @@ class Song
     artist = filename.split(" - ")[0]
     song = self.new(name)
     song.artist_name=(artist)
-    song.save
   end
 
   def artist_name=(name)
     self.artist = Artist.find_or_create_by_name(name)
   end
 
-  def save
-    @all << self
-  end
 end
