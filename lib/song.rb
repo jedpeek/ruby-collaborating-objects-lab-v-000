@@ -20,7 +20,7 @@ class Song
     song.save
   end
 
-  def artist_name=(name)
+  def artist_name=(artist)
     self.artist = Artist.find_or_create_by_name(name)
   end
 
