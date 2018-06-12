@@ -28,6 +28,7 @@ class Artist
         return artist
       else
         self.new(name).tap {|artist| artist.save}
+        self.save
       end
     end
    end
