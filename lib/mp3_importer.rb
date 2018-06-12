@@ -9,7 +9,6 @@ class MP3Importer
   def files
     @files = Dir.entries(@path)
     @files.delete_if{|file| file.length < 4}
-    @files
   end
 
   def import
