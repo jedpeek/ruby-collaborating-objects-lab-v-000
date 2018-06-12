@@ -13,6 +13,7 @@ class Artist
 
   def self.all
     @@all
+    binding.pry
   end
 
   def save
