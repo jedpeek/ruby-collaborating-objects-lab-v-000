@@ -21,7 +21,7 @@ class Artist
       if artist.name == name
         return artist
       else
-        self.new(name){|artist| artist.save}
+        self.new(name).tap {|artist| artist.save}
       end
     end
    end
