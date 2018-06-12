@@ -18,17 +18,14 @@ class Artist
   end
 
   def self.find_or_create_by_name(name)
-    self.find(name) ? self.find(name) : self.create(name)
-  end
-
-  def self.find(name)
-    self.all.find {|artist| artist.name == name }
-  end
-
-
-  def self.create(name)
-    self.new(name).tap {|artist| artist.save}
-  end
+    @@all.each do |artist|
+      if artist.name == name
+        return artist
+      else
+        self.new(name).tap {|artist| artist.save}
+      end
+    end
+   end
 
 
   def save
@@ -37,7 +34,7 @@ class Artist
 
 
   def print_songs
-    songs.each{|song| puts song.name}
+    songs.each {|song| puts song.name}
   end
 
 end
