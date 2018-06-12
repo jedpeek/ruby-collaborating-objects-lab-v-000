@@ -13,7 +13,7 @@ class Artist
   end
 
   def self.all
-    @@all
+    @@all.uniq
 
   end
 
